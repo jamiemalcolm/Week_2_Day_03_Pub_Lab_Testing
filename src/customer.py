@@ -1,16 +1,17 @@
 from src.pub import Pub
 
-#import pdb 
+#import pdb
+
 
 class Customer():
 
     def __init__(self, name, wallet, age):
-        self.name = name 
+        self.name = name
         self.wallet = wallet
         self.drinks = []
         self.age = age
-    
-    
+        self.drunkeness = 0
+
     def pay_for_drink(self, drink):
         self.wallet -= drink.price
 
@@ -23,7 +24,3 @@ class Customer():
             pub.gives_drink(drink)
             self.pay_for_drink(drink)
             pub.takes_payment(drink)
-            
-                
-
-    

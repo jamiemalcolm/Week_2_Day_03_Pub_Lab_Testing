@@ -4,6 +4,7 @@ from src.customer import Customer
 from src.pub import Pub
 from src.drink import Drink
 
+
 class TestCustomer(unittest.TestCase):
     def setUp(self):
         self.drink = Drink("beer", 4)
@@ -14,7 +15,6 @@ class TestCustomer(unittest.TestCase):
         self.customer2 = Customer("Rab C", 2, 72)
         self.customer3 = Customer("Fred", 25, 17)
         self.customer4 = Customer("Jane", 40, 18)
-
 
     def test_customer_has_name(self):
         self.assertEqual("Dan", self.customer.name)
@@ -38,7 +38,6 @@ class TestCustomer(unittest.TestCase):
         self.assertEqual(16, self.customer.wallet)
         self.assertEqual(104, pub.money)
 
-
     def test_customer_buys_drink__False(self):
         pub = Pub("The Prancing Pony", 100, self.drinks)
         self.customer2.buys_drink(self.drink, pub)
@@ -55,3 +54,6 @@ class TestCustomer(unittest.TestCase):
         self.assertEqual(2, len(pub.drinks))
         self.assertEqual(25, self.customer3.wallet)
         self.assertEqual(100, pub.money)
+
+    def test_customer_drunkeness(self):
+        self.assertEqual(0, self.customer.drunkeness)
