@@ -7,8 +7,8 @@ from src.drink import Drink
 
 class TestCustomer(unittest.TestCase):
     def setUp(self):
-        self.drink = Drink("beer", 4)
-        self.drink_2 = Drink("wine", 5)
+        self.drink = Drink("beer", 4, 5)
+        self.drink_2 = Drink("wine", 5, 3)
 
         self.drinks = [self.drink, self.drink_2]
         self.customer = Customer("Dan", 20, 23)
