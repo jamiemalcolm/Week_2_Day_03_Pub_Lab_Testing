@@ -57,3 +57,7 @@ class TestCustomer(unittest.TestCase):
 
     def test_customer_drunkeness(self):
         self.assertEqual(0, self.customer.drunkeness)
+
+    def test_customer_has_drink_increase_drunkeness(self):
+        self.assertEqual(1, self.customer.drinks)
+        self.assertEqual(5, self.customer.drunkeness)
