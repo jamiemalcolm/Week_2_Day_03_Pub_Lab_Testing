@@ -16,12 +16,13 @@ class Customer():
     def receives_drink(self, drink):
         self.drinks.append(drink)
 
+    def increase_drunkeness(self, drink):
+        self.drunkeness += drink.alcohol_level
+
     def buys_drink(self, drink, pub):
         if pub.check_customer_age(self) == True and self.wallet >= drink.price:
             self.receives_drink(drink)
             pub.gives_drink(drink)
             self.pay_for_drink(drink)
             pub.takes_payment(drink)
-
-    def increase_drunkeness(self, drink):
-        self.drunkeness += drink.alcohol_level
+            self.increase_drunkeness(drink)

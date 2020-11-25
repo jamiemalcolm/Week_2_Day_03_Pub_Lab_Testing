@@ -61,3 +61,12 @@ class TestCustomer(unittest.TestCase):
     def test_customer_has_drink_increase_drunkeness(self):
         self.customer.increase_drunkeness(self.drink)
         self.assertEqual(5, self.customer.drunkeness)
+
+    def test_buys_drink_increase_drunk(self):
+        pub = Pub("The Prancing Pony", 100, self.drinks)
+        self.customer.buys_drink(self.drink, pub)
+        self.assertEqual(1, len(self.customer.drinks))
+        self.assertEqual(1, len(pub.drinks))
+        self.assertEqual(16, self.customer.wallet)
+        self.assertEqual(104, pub.money)
+        self.assertEqual(5, self.customer.drunkeness)
