@@ -22,3 +22,6 @@ class Customer():
             pub.gives_drink(drink)
             self.pay_for_drink(drink)
             pub.takes_payment(drink)
+
+    def increase_drunkeness(self, drink):
+        self.drunkeness += drink.alcohol_level
